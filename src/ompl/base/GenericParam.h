@@ -227,12 +227,14 @@ namespace ompl
         public:
             /** \brief This function declares a parameter \e name, and specifies the \e setter and \e getter functions.
              */
+            #ifndef SWIG
             template <typename T>
             void declareParam(const std::string &name, const typename SpecificParam<T>::SetterFn &setter,
                               const typename SpecificParam<T>::GetterFn &getter = [] { return T(); })
             {
                 params_[name] = std::make_shared<SpecificParam<T>>(name, setter, getter);
             }
+            #endif
 
             /** \brief Add a parameter to the set */
             void add(const GenericParamPtr &param);

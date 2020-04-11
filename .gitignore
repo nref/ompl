@@ -4,6 +4,7 @@
 build/
 bin/
 lib/
+obj/
 *.pcd
 *.pyc
 *.so

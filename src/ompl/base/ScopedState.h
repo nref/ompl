@@ -55,12 +55,14 @@ namespace ompl
         template <class T = StateSpace>
         class ScopedState
         {
+            #ifndef SWIG
             /** \brief Make sure the type we are allocating is indeed from a state space */
             BOOST_CONCEPT_ASSERT((boost::Convertible<T *, StateSpace *>));
 
             /** \brief Make sure the type we are allocating is indeed a state */
             BOOST_CONCEPT_ASSERT((boost::Convertible<typename T::StateType *, State *>));
-
+            #endif
+            
         public:
             /** \brief The type of the contained state */
             using StateType = typename T::StateType;
