@@ -1,6 +1,8 @@
 .registered
 .DS_Store
 *.swp
+*.user
+*.vs
 build/
 bin/
 lib/

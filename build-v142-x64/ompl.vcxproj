@@ -41,18 +41,18 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\build-v142-x64\bin\Debug\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\build-v142-x64\obj\Debug\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">obj\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ompl</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\build-v142-x64\bin\Release\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\build-v142-x64\obj\Release\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">obj\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ompl</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\src;..\build-v142-x64;..\..\eigen;C:\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\src;.;..\..\eigen;C:\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -67,28 +67,20 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level1</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NOMINMAX;BOOST_ALL_NO_LIB;BOOST_PROGRAM_OPTIONS_DYN_LINK;BOOST_TEST_DYN_LINK;BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NOMINMAX;BOOST_ALL_NO_LIB;BOOST_PROGRAM_OPTIONS_DYN_LINK;BOOST_TEST_DYN_LINK;BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NOMINMAX;BOOST_ALL_NO_LIB;BOOST_PROGRAM_OPTIONS_DYN_LINK;BOOST_TEST_DYN_LINK;BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\src;..\build-v142-x64;..\..\eigen;C:\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NOMINMAX;BOOST_ALL_NO_LIB;BOOST_PROGRAM_OPTIONS_DYN_LINK;BOOST_TEST_DYN_LINK;BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\src;.;..\..\eigen;C:\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
-    <Midl>
-      <AdditionalIncludeDirectories>..\src;..\build-v142-x64;..\..\eigen;C:\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
-      <HeaderFileName>%(Filename).h</HeaderFileName>
-      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
-      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
-    </Midl>
     <Lib>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64 psapi.lib ws2_32.lib</AdditionalOptions>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\src;..\build-v142-x64;..\..\eigen;C:\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\src;.;..\..\eigen;C:\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -101,23 +93,15 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level1</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NOMINMAX;NDEBUG;BOOST_ALL_NO_LIB;BOOST_PROGRAM_OPTIONS_DYN_LINK;BOOST_TEST_DYN_LINK;BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NOMINMAX;NDEBUG;BOOST_ALL_NO_LIB;BOOST_PROGRAM_OPTIONS_DYN_LINK;BOOST_TEST_DYN_LINK;BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NOMINMAX;NDEBUG;BOOST_ALL_NO_LIB;BOOST_PROGRAM_OPTIONS_DYN_LINK;BOOST_TEST_DYN_LINK;BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\src;..\build-v142-x64;..\..\eigen;C:\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NOMINMAX;NDEBUG;BOOST_ALL_NO_LIB;BOOST_PROGRAM_OPTIONS_DYN_LINK;BOOST_TEST_DYN_LINK;BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\src;.;..\..\eigen;C:\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
-    <Midl>
-      <AdditionalIncludeDirectories>..\src;..\build-v142-x64;..\..\eigen;C:\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
-      <HeaderFileName>%(Filename).h</HeaderFileName>
-      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
-      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
-    </Midl>
     <Lib>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64 psapi.lib ws2_32.lib</AdditionalOptions>
     </Lib>
