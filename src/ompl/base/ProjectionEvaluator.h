@@ -106,7 +106,9 @@ namespace ompl
             Matrix mat;
 
         public:
+            #ifndef SWIG
             EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+            #endif
         };
 
         /// @cond IGNORE
@@ -312,7 +314,9 @@ namespace ompl
 
             unsigned int getDimension() const override;
 
+            #ifndef SWIG
             void project(const State *state, Eigen::Ref<Eigen::VectorXd> projection) const override;
+            #endif
 
         protected:
             /** \brief The index of the subspace from which to project */
