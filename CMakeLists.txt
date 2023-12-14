@@ -110,6 +110,9 @@ set_package_properties(Eigen3 PROPERTIES
     URL "http://eigen.tuxfamily.org"
     PURPOSE "A linear algebra library used throughout OMPL.")
 find_package(Eigen3 REQUIRED)
+if (NOT DEFINED EIGEN3_INCLUDE_DIR)
+    get_target_property(EIGEN3_INCLUDE_DIR Eigen3::Eigen INTERFACE_INCLUDE_DIRECTORIES)
+endif ()
 include_directories("${EIGEN3_INCLUDE_DIR}")
 
 set_package_properties(MORSE PROPERTIES
