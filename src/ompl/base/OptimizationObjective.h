@@ -43,8 +43,10 @@
 #include "ompl/base/ProblemDefinition.h"
 #include "ompl/base/samplers/InformedStateSampler.h"
 // This is needed to correctly generate the python bindings
+#ifndef SWIG
 #ifndef __castxml__
 #include "ompl/control/Control.h"
+#endif
 #endif
 
 #include <functional>
@@ -120,10 +122,12 @@ namespace ompl
             virtual Cost motionCost(const State *s1, const State *s2) const = 0;
 
 // This is needed to correctly generate the python bindings
+#ifndef SWIG
 #ifndef __castxml__
             /** \brief Get the cost that corresponds to the motion created by a control \e c applied for duration \e steps.
              * The default implementation uses the identityCost. */
             virtual Cost controlCost(const control::Control *c, unsigned int steps) const;
+#endif
 #endif
 
             /** \brief Get the cost that corresponds to combining the costs \e c1 and \e c2. Default implementation

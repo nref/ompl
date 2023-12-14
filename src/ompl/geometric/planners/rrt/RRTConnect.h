@@ -103,6 +103,7 @@ namespace ompl
             }
 
             /** \brief Set a different nearest neighbors datastructure */
+            #ifndef SWIG
             template <template <typename T> class NN>
             void setNearestNeighbors()
             {
@@ -113,6 +114,7 @@ namespace ompl
                 tGoal_ = std::make_shared<NN<Motion *>>();
                 setup();
             }
+            #endif
 
             void setup() override;
 

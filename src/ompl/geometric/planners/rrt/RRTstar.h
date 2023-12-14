@@ -138,6 +138,7 @@ namespace ompl
             }
 
             /** \brief Set a different nearest neighbors datastructure */
+            #ifndef SWIG
             template <template <typename T> class NN>
             void setNearestNeighbors()
             {
@@ -147,6 +148,7 @@ namespace ompl
                 nn_ = std::make_shared<NN<Motion *>>();
                 setup();
             }
+            #endif
 
             /** \brief Option that delays collision checking procedures.
                 When it is enabled, all neighbors are sorted by cost. The
